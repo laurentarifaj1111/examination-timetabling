@@ -1,8 +1,9 @@
-package org.fiek;
+package org.fiek.helpers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.fiek.models.Instance;
 
 import java.io.IOException;
 import java.io.InputStream;

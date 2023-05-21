@@ -1,4 +1,4 @@
-package org.fiek;
+package org.fiek.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -50,5 +50,8 @@ public class Exam {
         return Objects.hash(this.id, this.period);
     }
 
+    public void increaseNumOfConflicts(){
+        this.numOfConflicts++;
+    }
 
 }

@@ -4,84 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1de405c-9edf-4d98-822a-98f8ee1dcc57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/ConflictTypes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Constraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Curricula.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/EventAndAssignmentData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Exam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/ExamSoftConflict.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/ExamType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Instance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/JsonSerialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/LoadInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/PotentialSolution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/ResultsFormated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/RoomAndPeriod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/RoomsRequested.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/SAConfigs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Solver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Structure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/StructureType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/VNSConfigs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/WrittenOralSpecs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-1-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-2-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-3-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-3-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D1-3-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D2-1-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D2-2-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D2-3-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-1-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-1-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-2-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-2-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-3-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-3-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D3-3-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-1-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-2-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-3-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D4-3-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D5-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D5-1-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D5-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D5-2-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D5-3-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-1-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-1-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-2-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-2-18.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-3-16.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D6-3-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D7-1-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/D7-2-17.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstancesJSON/toy.json" afterDir="false" />
+    <list default="true" id="6cd762b0-69f0-471e-9835-20e1788b51db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/VNSConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/ConflictTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/ConflictTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Constraint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Curricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Curricula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Entry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/EventAndAssignmentData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/ExamSoftConflict.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/ExamType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/ExamType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Instance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Instance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/JsonSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/helpers/JsonSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/LoadInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/helpers/LoadInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Output.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/PotentialSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/SolutionBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/ResultsFormated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/RoomAndPeriod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/RoomsRequested.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/RoomsRequested.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/SAConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/SAConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/Structure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/StructureType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/Structure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/VNSConfigs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fiek/WrittenOralSpecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fiek/models/WrittenOralSpecs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,31 +48,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="examination-timetabling" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="examination-timetabling" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="examination-timetabling" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="examination-timetabling" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -137,10 +70,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2PqKRkHooDENaSfabmkhaSDkuOH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Q3MSfKyD1WKozy6ijW7KDLF5YI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -150,9 +90,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Tab-separated (TSV)_id",
-    "database.data.extractors.current.id": "Tab-separated (TSV)_id",
-    "last_opened_file_path": "C:/Users/laure/Documents/Projects/examination-timetabling/src/main/resources",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.id": "Comma-separated (CSV)_id",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -161,19 +100,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\laure\Documents\Projects\examination-timetabling\src\main\resources" />
-      <recent name="C:\Users\laure\Documents\Projects\examination-timetabling\src\main\java\org\fiek" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Gradle.examination-timetabling [build]">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fiek.Main" />
       <module name="examination-timetabling.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fiek.*" />
+          <option name="PATTERN" value="org.fiek.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -181,35 +114,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="examination-timetabling [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.examination-timetabling [build]" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.examination-timetabling [build]" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -217,31 +123,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1de405c-9edf-4d98-822a-98f8ee1dcc57" name="Changes" comment="" />
-      <created>1684179168038</created>
+      <changelist id="6cd762b0-69f0-471e-9835-20e1788b51db" name="Changes" comment="" />
+      <created>1684577812809</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684179168038</updated>
-      <workItem from="1684179169114" duration="9239000" />
-      <workItem from="1684261081070" duration="13241000" />
-      <workItem from="1684339624930" duration="1758000" />
-      <workItem from="1684343652150" duration="7033000" />
-      <workItem from="1684434135086" duration="16412000" />
+      <updated>1684577812809</updated>
+      <workItem from="1684577814889" duration="38504000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

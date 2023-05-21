@@ -1,4 +1,4 @@
-package org.fiek;
+package org.fiek.models;
 
 public enum ExamType {
     Written,

@@ -1,8 +1,12 @@
-package org.fiek;
+package org.fiek.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.fiek.models.ConflictTypes;
+import org.fiek.models.Course;
+import org.fiek.models.Curricula;
+import org.fiek.models.Room;
 
 import java.util.List;
 
@@ -21,7 +25,7 @@ public class Instance {
     @JsonProperty("Teachers")
     List<String> teachers;
     @JsonProperty("Constraints")
-    List<Constraint> Constraints;
+    List<ConflictTypes.Constraint> Constraints;
 
     @JsonProperty("Courses")
     List<Course> courses;

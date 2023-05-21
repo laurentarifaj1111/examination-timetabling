@@ -2,6 +2,7 @@ package org.fiek;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.fiek.models.*;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -9,21 +10,20 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
-public class PotentialSolution {
+public class SolutionBuilder {
     String instanceName;
     Instance instance;
     List<Exam> exams;
-    int eval;
-    List<Entry> listOfData;
     Set<Exam> examsWithHardConstraintConflictSet;
     Set<Exam> examsWithSoftConstraintConflictSet;
     Map<String, AtomicInteger> curriculasWithConflicts;
     int hardConflicts;
     int softConflicts;
-
     int hash;
+    int eval;
 
-    public PotentialSolution() {
+
+    public SolutionBuilder() {
         hardConflicts = 0;
         softConflicts = 0;
         curriculasWithConflicts = new HashMap<>();
@@ -39,9 +39,13 @@ public class PotentialSolution {
         examsWithSoftConstraintConflictSet = new HashSet<>();
         evalHardConstraints();
         evalSoftConstraints();
+        calculateEval();
+        this.hash = generateHash();
+    }
+
+    public void calculateEval() {
         this.eval = hardConflicts * 1000;
         this.eval = this.eval + softConflicts;
-        this.hash = generateHash();
     }
 
     public void evalSoftConstraints() {
@@ -70,7 +74,7 @@ public class PotentialSolution {
                     .filter(roomType -> !roomType.equals(exam.getCourse().getRoomsRequested().getType()))
                     .findFirst();
             if (first.isPresent() || exam.getRooms().size() != exam.getCourse().getRoomsRequested().getNumber()) {
-                exam.hasRoomRequestConflict = true;
+                exam.setHasRoomRequestConflict(true);
                 examsWithHardConstraintConflictSet.add(exam);
             }
         }
@@ -78,13 +82,6 @@ public class PotentialSolution {
 
     public int getHash() {
         return this.hash;
-//        List<Integer> ints = new ArrayList<>();
-//        this.exams.forEach(exam -> {
-//            ints.add(exam.getHash());
-//        });
-//        return Objects.hash(ints.stream()
-//                .sorted()
-//                .collect(Collectors.toList()));
     }
 
     public int generateHash() {
@@ -97,15 +94,11 @@ public class PotentialSolution {
                 .collect(Collectors.toList()));
     }
 
-
-    /**
-     * RoomOccupation check
-     */
     private void roomOccupationCheck() {
         Map<String, List<Exam>> examsGroupedByRoomOccupation = new HashMap<>();
         for (Exam exam : this.exams) {
             for (Room room : exam.getRooms()) {
-                String roomAndPeriodKey = room.getRoom().trim() + "-" + exam.period;
+                String roomAndPeriodKey = room.getRoom().trim() + "-" + exam.getPeriod();
                 if (examsGroupedByRoomOccupation.containsKey(roomAndPeriodKey)) {
                     examsGroupedByRoomOccupation.get(roomAndPeriodKey).add(exam);
                 } else {
@@ -118,7 +111,7 @@ public class PotentialSolution {
         examsGroupedByRoomOccupation.forEach((key, examsList) -> {
             if (examsList.size() > 1) {
                 for (Exam exam : examsList) {
-                    exam.hasRoomRequestConflict = true;
+                    exam.setHasRoomRequestConflict(true);
                     hardConflicts++;
                     examsWithHardConstraintConflictSet.add(exam);
                 }
@@ -167,7 +160,7 @@ public class PotentialSolution {
                 integerListMap.forEach((integer, examsOfPeriod) -> {
                     if (examsOfPeriod.size() > 1) {
                         for (Exam exam : examsOfPeriod) {
-                            exam.hasHardConflict = true;
+                            exam.setHasHardConflict(true);
                             hardConflicts++;
                             examsWithHardConstraintConflictSet.add(exam);
                         }
@@ -177,7 +170,7 @@ public class PotentialSolution {
             integerListMap.forEach((integer, examsOfPeriod) -> {
                 if (examsOfPeriod.size() > 1) {
                     for (Exam exam : examsOfPeriod) {
-                        exam.hasHardConflict = true;
+                        exam.setHasHardConflict(true);
                         hardConflicts++;
                         examsWithHardConstraintConflictSet.add(exam);
                     }
@@ -214,7 +207,7 @@ public class PotentialSolution {
                 integerListMap.forEach((integer, examsOfPeriod) -> {
                     if (examsOfPeriod.size() > 1) {
                         for (Exam exam : examsOfPeriod) {
-                            exam.hasSoftConflict = true;
+                            exam.setHasSoftConflict( true);
                             softConflicts++;
                             examsWithSoftConstraintConflictSet.add(exam);
                         }
@@ -223,10 +216,10 @@ public class PotentialSolution {
     }
 
     public void primaryDistance() {
-        if (this.instance.primaryPrimaryDistance == null) {
+        if (this.instance.getPrimaryPrimaryDistance() == null) {
             return;
         }
-        List<Curricula> curriculaList = this.getInstance().curricula;
+        List<Curricula> curriculaList = this.getInstance().getCurricula();
         Map<String, List<String>> curriculaPrimaryCourses = new HashMap<>();
         Map<String, List<Exam>> curriculaPrimaryExamCourses = new HashMap<>();
         for (Curricula curricula : curriculaList) {
@@ -244,11 +237,11 @@ public class PotentialSolution {
         curriculaPrimaryExamCourses.forEach((key, curriculaExams) -> {
             for (int i = 0; i < curriculaExams.size(); i++) {
                 for (int j = i + 1; j < curriculaExams.size(); j++) {
-                    if (Math.abs(curriculaExams.get(i).getPeriod() - curriculaExams.get(j).getPeriod()) < this.getInstance().primaryPrimaryDistance) {
+                    if (Math.abs(curriculaExams.get(i).getPeriod() - curriculaExams.get(j).getPeriod()) < this.getInstance().getPrimaryPrimaryDistance()) {
                         curriculaExams.get(i).setHasPrimaryPrimaryConflict(true);
                         curriculaExams.get(j).setHasPrimaryPrimaryConflict(true);
-                        curriculaExams.get(i).numOfConflicts++;
-                        curriculaExams.get(j).numOfConflicts++;
+                        curriculaExams.get(i).increaseNumOfConflicts(); ;
+                        curriculaExams.get(j).increaseNumOfConflicts();
                         this.examsWithSoftConstraintConflictSet.add(curriculaExams.get(i));
                         this.examsWithSoftConstraintConflictSet.add(curriculaExams.get(j));
                         if (curriculasWithConflicts.containsKey(key)) {
@@ -264,23 +257,23 @@ public class PotentialSolution {
     }
 
     public void primarySecondaryDistance() {
-        if (this.instance.primarySecondaryDistance == null) {
+        if (this.instance.getPrimarySecondaryDistance() == null) {
             return;
         }
         for (int i = 0; i < this.exams.size(); i++) {
             for (int j = i + 1; j < this.exams.size(); j++) {
-                String course1 = this.getExams().get(i).course.id;
-                String course2 = this.getExams().get(j).course.id;
-                for (Curricula curricula : this.instance.curricula) {
-                    if ((curricula.primaryCourses.contains(course1) && curricula.getSecondaryCourses().contains(course2)) ||
-                            (curricula.primaryCourses.contains(course2) && curricula.getSecondaryCourses().contains(course1))) {
-                        if (Math.abs(this.getExams().get(i).getPeriod() - this.getExams().get(j).getPeriod()) < this.getInstance().primarySecondaryDistance) {
+                String course1 = this.getExams().get(i).getCourse().getId();
+                String course2 = this.getExams().get(j).getCourse().getId();
+                for (Curricula curricula : this.instance.getCurricula()) {
+                    if ((curricula.getPrimaryCourses().contains(course1) && curricula.getSecondaryCourses().contains(course2)) ||
+                            (curricula.getPrimaryCourses().contains(course2) && curricula.getSecondaryCourses().contains(course1))) {
+                        if (Math.abs(this.getExams().get(i).getPeriod() - this.getExams().get(j).getPeriod()) < this.getInstance().getPrimarySecondaryDistance()) {
                             this.examsWithSoftConstraintConflictSet.add(this.exams.get(i));
                             this.examsWithSoftConstraintConflictSet.add(this.exams.get(j));
                             if (curriculasWithConflicts.containsKey(curricula.getId())) {
                                 curriculasWithConflicts.get(curricula.getId()).getAndIncrement();
                             } else {
-                                curriculasWithConflicts.put(curricula.id, new AtomicInteger(1));
+                                curriculasWithConflicts.put(curricula.getId(), new AtomicInteger(1));
                             }
                             softConflicts++;
                         }
@@ -291,34 +284,23 @@ public class PotentialSolution {
         }
     }
 
-
-//    @Override
-//    public int compareTo(PotentialSolution o1) {
-//        if (o1.eval != this.getEval()) {
-//            return -Integer.compare(this.getEval(), o1.getEval());
-//        }
-//        List<Map.Entry<Integer, Long>> entryList1 = o1.getExams().stream()
-//                .filter(exam -> exam.getNumOfConflicts() > 0)
-//                .sorted(Comparator.comparing(exam -> exam.numOfConflicts))
-//                .collect(Collectors.groupingBy(exam -> exam.numOfConflicts, Collectors.counting()))
-//                .entrySet().stream()
-//                .sorted(Map.Entry.<Integer, Long>comparingByKey().reversed())
-//                .toList();
-//
-//
-//        List<Map.Entry<Integer, Long>> entryList2 = this.getExams().stream()
-//                .filter(exam -> exam.getNumOfConflicts() > 0)
-//                .sorted(Comparator.comparing(exam -> exam.numOfConflicts))
-//                .collect(Collectors.groupingBy(exam -> exam.numOfConflicts, Collectors.counting()))
-//                .entrySet().stream()
-//                .sorted(Map.Entry.<Integer, Long>comparingByKey().reversed())
-//                .toList();
-//        if (!entryList1.isEmpty() && !entryList2.isEmpty()) {
-//            if (entryList1.get(0) != entryList2.get(0)) {
-//                return Integer.compare(entryList2.get(0).getKey(), entryList1.get(0).getKey());
-//            }
-//        }
-//        return Integer.compare(entryList2.size(), entryList1.size());
-//    }
+    public Solution build() {
+        Solution resultsFormated = new Solution();
+        List<Solution.Exam> collect = this.getExams()
+                .stream().map(exam -> {
+                    Solution.Exam exam1 = new Solution.Exam();
+                    exam1.setPeriod(exam.getPeriod());
+                    exam1.setCourse(exam.getCourse().getId());
+                    if (exam.getRooms() != null) {
+                        exam1.setRoom(exam.getRooms().stream().map(Room::getRoom).collect(Collectors.joining(", ")));
+                    } else {
+                        exam1.setRoom("");
+                    }
+                    return exam1;
+                }).toList();
+        resultsFormated.setAssignments(collect);
+        resultsFormated.setCost(this.eval);
+        return resultsFormated;
+    }
 
 }
