@@ -101,7 +101,7 @@ public class Solver {
 
     }
 
-    public static static void hybrid(String name) throws IOException {
+    public static void hybrid(String name) throws IOException {
         SolutionBuilder bestSolutionYet = initSolution(name);
         SolutionBuilder iterationBestSolution = copySolution(bestSolutionYet);
         long initTime = Instant.now().getEpochSecond();
